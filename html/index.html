@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>index</title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/iconfont.css" />
+    <style type="text/css">
+    	nav.mui-bar-tab{
+    		background: #FFFFFF;
+    		height:1.5rem;
+    		box-shadow: none;
+    	}
+    	.mui-bar-tab .mui-tab-item{
+    		position: relative;
+    		vertical-align: inherit; 
+    		color: #bdbdbf; 
+    	}
+    	.mui-tab-label{
+    		display: inline-block;
+    		margin-top: 0.1rem;
+    		font-size: 0.35rem !important;
+    	}
+    	.mui-active.mui-active.mui-active{
+    		color:#488de4;
+    	}
+    	.mui-bar-tab .iconfont {
+			display: block;
+			font-size:0.5rem;
+			padding-top: 4px;
+			height: 26px;
+		}
+    </style>
+</head>
+<body class="mui-fullscreen">
+		<nav class="mui-bar mui-bar-tab" id="title">
+		    <a id="defaultTab" class="mui-tab-item mui-active" href="home_page.html">
+		    	<span class="iconfont icon-lvyou"></span>
+		        <span class="mui-tab-label">首页</span>
+		    </a>
+		    <a class="mui-tab-item" href="destination.html">
+		    	<span class="iconfont icon-mudedi"></span>
+		        <span class="mui-tab-label">目的地</span> 
+		    </a>
+		    <a class="mui-tab-item" href="find.html">
+		    	<span class="iconfont icon-icon3"></span>
+		        <span class="mui-tab-label">发现</span>
+		    </a>
+		    <a class="mui-tab-item" href="my.html">
+		    	<span class="iconfont icon-lvyou1"></span>
+		        <span class="mui-tab-label">我的</span>
+		    </a> 
+		</nav>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.1.1.min.js"></script>
+		<script>	
+			mui.init();
+	mui.plusReady(function(){
+			var subpages = ['home_page.html','destination.html','find.html','my.html'];
+			var subpage_style = {
+				top: '0',
+				bottom: '60px'
+			};
+			var aniShow = {};
+				if(mui.os.ios){//ios下应用全屏
+			        plus.navigator.setFullscreen(false);
+			    }
+			    plus.navigator.closeSplashscreen();
+				var self = plus.webview.currentWebview();
+				for (var i = 0; i < 4; i++) {
+					var temp = {};
+					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+					if (i > 0) {
+						sub.hide();
+					}else{
+						temp[subpages[i]] = "true";
+						mui.extend(aniShow,temp);
+					}
+					self.append(sub);
+				}
+				//选项卡点击
+				var activeTab = subpages[0];
+				mui('.mui-bar-tab').on('tap', 'a', function(e) {
+					var targetTab = this.getAttribute('href');
+					if (targetTab == activeTab) {
+						return;
+					}
+					if(mui.os.ios||aniShow[targetTab]){
+						plus.webview.show(targetTab);
+					}else{
+						var temp = {};
+						temp[targetTab] = "true";
+						mui.extend(aniShow,temp);
+						plus.webview.show(targetTab,"fade-in",300);
+					}
+					plus.webview.hide(activeTab);
+					activeTab = targetTab;
+				});
+});
+			
+</script>
+</body>
+</html>

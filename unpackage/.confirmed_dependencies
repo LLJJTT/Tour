@@ -1,0 +1,25 @@
+{
+  "html/index.html": {
+    "resources": [
+      "html/home_page.html"
+    ],
+    "refer": [
+      "html/my.html",
+      "html/destination.html",
+      "html/home_page.html",
+      "html/find.html"
+    ]
+  },
+  "html/login.html": {
+    "refer": [
+      "html/index.html",
+      "html/register.html",
+      "html/forgot.html"
+    ]
+  },
+  "html/register.html": {
+    "refer": [
+      "html/index.html"
+    ]
+  }
+}

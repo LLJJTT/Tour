@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+	</head>
+  <style type="text/css">
+  	.mui-content{ 
+  		background: #FFFFFF !important;
+  	}
+  	 .mui-slider-item a img {
+  	 	width: 100%;
+  	 	height:5rem;
+  	 }
+  	 .mui-slider-item a p{
+  	 	text-align: center;
+  	 	width: 90%;
+  	 	left: 5%;
+  	 	height: 1rem;
+  	 	position: absolute;
+  	 	top:3.5rem;
+  	 	color: #FFFFFF;
+  	 	font-size: 0.64rem;
+  	 }
+  	 .mui-slider{
+  	 	height:5rem;
+  	 }
+  	 .mui-indicator{
+  	 	background: #fcfbf8 !important;
+  	 }
+  	 .mui-active{
+  	 	background: #f07255 !important;
+  	 }
+  	 .search_div{
+  	 	position: relative;
+  	 	top: -4.5rem;
+  	 	z-index:2;
+  	 }
+  	 .search{
+  	 	height: 1.1rem !important;
+  	 	position: relative;
+  	 	border: none !important;
+  	 	box-shadow: none;
+  	 	width: 90% !important;
+  	 	left: 5%;
+  	 	margin-top:0.8rem;
+  	 	border-radius: 20px !important;
+  	 	background:rgba(255,255,255,0.4)!important;
+  	 }
+  	 .fangda{
+  	 	position: absolute;
+  	 	top: 0.2rem;
+  	 	right:1rem;
+  	 	z-index: 99;
+  	 }
+  	 .tubiao{
+  	 	position: relative;
+  	 	margin-top:-0.8rem ;
+  	 }
+  	 .tubiao div li img{
+  	 	margin: auto;
+  	 	padding: 0.05rem;
+  	 	width: 1.4rem;
+  	 	height: 1.4rem;
+  	 	display: block;
+  	 }
+  	 .tubiao div li{
+  	 	text-align: center;
+  	 	color: #333333;
+  	 	font-size: 0.35rem;
+  	 }
+  	 .recommend{
+  	 	margin-top:0.5rem;
+  	 }
+  	 .rep{
+  	 	font-size: 0.45rem;  
+  	 	color: #333333;
+  	 	margin-left: 0.35rem;
+  	 }
+  	 .rep_sub{
+  	 	font-size: 0.38rem;  
+  	 	color: #AAAAAA;
+  	 	margin-left: 0.35rem;
+  	 }
+  	 .look_more{
+  	 	margin-left:0.5rem;
+  	 	font-size: 0.35rem;
+  	 	color: #941d1d;
+  	 }
+  	 .right{
+  	 	font-size: 0.45rem;
+  	 	color: #941d1d !important;
+  	 }
+  	 .slider_div{
+  	 	position: relative;
+  	 	width: 100%;
+  	 	height: 5rem;
+		overflow: hidden;
+  	 }
+  	 .img_Ldiv{
+  	 	overflow: hidden;
+  	 	position: absolute;
+		left: inherit;
+		top:inherit;
+  	 	height: 5rem;
+  	 	width:50rem;
+  	 	padding: 0.39rem 0.3rem 0 0.3rem;
+  	 } 
+  	 .img_Ldiv div{
+       float: left;
+       margin-left: 0.2rem;
+  	 }
+  	 .img_Ldiv div img{
+  	 	height:4rem;
+  	 	width:8rem;
+  	 }
+  	 .img_container{
+  	 	padding: 0.2rem 0.3rem 0.3rem 0.3rem;
+  	 }
+  	 .img_Sdiv img{
+  	 	display: block;
+  	 	width: 50%;
+  	 	float: left;
+  	 	padding:0.2rem 0;
+  	 }
+  	 .img_Sdiv img:first-child{ 
+  	 	padding-right: 0.2rem;
+  	 }
+  	 .img_Sdiv img:nth-child(2){
+  	 	padding-left: 0.2rem;
+  	 }
+  	 .info_ul{
+  	 	position: relative;
+  	 	margin-top: -4.5rem;
+  	 	background: rgba(0,0,0,0.1);
+  	 }
+  	 .info_ul li:first-child{
+  	 	color: #FFFFFF;
+  	 	font-size:0.6rem;
+  	 	text-align: center;
+  	 	margin-top: 1.5rem;
+  	 }
+  	 .info_ul li:nth-child(2){
+  	 	color: #FFFFFF;
+  	 	font-size:0.35rem;
+  	 	text-align: center;
+  	 	margin-top: .5rem;
+  	 }
+  	 .info_ul li:nth-child(3){
+  	 	color: #FFFFFF;
+  	 	font-size:0.35rem;
+  	 	text-align: center;
+  	 	margin-top: .15rem;
+  	 }
+  	 .ad{
+  	 	width: 10rem;
+  	 	margin-top: 0.3rem;
+  	 	padding-left: 0.3rem;
+  	 }
+  	 .toutiao{
+  	 	width:2rem;
+  	 	height:1rem;
+  	 }
+  	 .word_toutiao{
+  	 	color: #fff;
+  	 	font-size: 0.3rem;
+  	 	position: relative;
+  	 	margin-left: -1.5rem;
+  	 	font-weight: bold;
+  	 }
+  	 .swiper_wrap{
+  	 	text-align: left;
+  	 	border-radius: 2px;
+  	 	padding:0 0.2rem 0 0.2rem;
+  	 	color: #FFFFFF;
+  	 	background: #007AFF;
+  	 	margin-left: 2.7rem;
+  	 	margin-top: -0.73rem;
+  	 	height:.5rem;
+  	 	width:78%;
+  	 	overflow: hidden;
+  	 	float: right;
+  	 	margin-right:0.05rem;
+  	 }
+  	 .font_inner{
+  	 	position: relative;
+		top: 0;
+		left:5rem;
+		float: right;
+  	 }
+  	 .font_inner li{
+  	 	
+  	 	height:.5rem;
+  	 	line-height:.55rem
+  	 }
+  </style>
+	<body>
+		<div class="mui-content">
+			<div class="mui-slider">
+				  <div class="mui-slider-group mui-slider-loop banner-box">
+					    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../img/cbs.jpg" /><p>跟随着魔戒的脚步</p></a></div>
+					    <div class="mui-slider-item"><a href="#"><img src="../img/aerbeisi.jpg" /><p>雪山拔云见日</p></a></div>
+					    <div class="mui-slider-item"><a href="#"><img src="../img/cbs3.jpg" /><p>碧海蓝天的约定</p></a></div>
+					    <div class="mui-slider-item"><a href="#"><img src="../img/cbs2.jpg" /><p>云空悬镜若天坑</p></a></div>
+					    <div class="mui-slider-item"><a href="#"><img src="../img/cbs.jpg" /><p>跟随着魔戒的脚步</p></a></div>
+					    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../img/aerbeisi.jpg" /><p>雪山拔云见日</p></a></div>
+				  </div>
+				  <div class="mui-slider-indicator xiabiao">
+					    <div class="mui-indicator mui-active"></div>
+					    <div class="mui-indicator"></div>
+					    <div class="mui-indicator"></div>
+					    <div class="mui-indicator"></div>
+				  </div>
+			</div>
+			<div class="search_div">
+				<input class="search" type="text" placeholder="请输入关键字搜索" />
+				<span class="mui-icon mui-icon-search fangda"></span>
+			</div> 
+			<div class="mui-row tubiao">
+		        <div class="mui-col-sm-3 mui-col-xs-3"><li><img src="../img/jd.png" alt="" />景点地图</li></div>
+		        <div class="mui-col-sm-3 mui-col-xs-3"><li><img src="../img/lxz.png" alt="" />城市向导</li></div>
+		        <div class="mui-col-sm-3 mui-col-xs-3"><li><img src="../img/xc.png" alt="" />乡村游</li></div>
+		        <div class="mui-col-sm-3 mui-col-xs-3"><li><img src="../img/qzk.png" alt="" />咨询</li></div>
+			</div>
+			<div class="ad">
+				<img class="toutiao" src="../img/tt.png"/>
+				<i class="word_toutiao">头条新闻</i>
+				<div class="swiper_wrap mui-ellipsis">
+					<ul class="font_inner">
+						<li class="mui-ellipsis">
+							1调用两条新闻并设定时间上下切换（切换时间3秒，点击左右的按钮亦可切换）
+						</li>
+						<li class="mui-ellipsis">
+							2调用两条新闻并设定时间上下切换
+						</li>
+						<li class="mui-ellipsis">
+							3调用两条新闻并设定时间上下切换切换时间3秒，点击左
+						</li>
+						<li class="mui-ellipsis">
+							4调用两条新闻并设定时间上下切换
+						</li>
+					</ul>
+					<!--<a href="javascript:void(0)" class="lt">&lt;</a>
+					<a href="javascript:void(0)" class="gt">&gt;</a>-->
+				</div>
+			</div>
+			<div class="recommend">
+				 <span class="rep">下一站推荐</span>
+				 <span class="rep_sub">满足丰富多样的出行方式</span>
+				 <span class="look_more">查看更多</span>
+				 <span class="mui-icon mui-icon-arrowright right"></span>
+				 <div class="slider_div" id="wrapper">
+				 	<div class="img_Ldiv" >
+				 		<div>
+				 			<img src="../img/cbs.jpg" alt="" />
+				 			<ul class="info_ul">
+				 				<li>泰国</li>
+				 				<li>1166位用户发起过定制</li>
+				 				<li>国家</li>
+				 			</ul>
+				 		</div>
+				 		<div>
+				 			<img src="../img/cbs2.jpg" alt="" />
+				 			<ul class="info_ul">
+				 				<li>泰国</li>
+				 				<li>1166位用户发起过定制</li>
+				 				<li>国家</li>
+				 			</ul>
+				 		</div>
+				 		<div>
+				 			<img src="../img/cbs3.jpg" alt="" />
+				 			<ul class="info_ul">
+				 				<li>泰国</li>
+				 				<li>1166位用户发起过定制</li>
+				 				<li>国家</li>
+				 			</ul>
+				 		</div>
+				 		<div >
+				 			<img src="../img/hrb1.jpg" alt="" />
+				 			<ul class="info_ul">
+				 				<li>泰国</li>
+				 				<li>1166位用户发起过定制</li>
+				 				<li>国家</li>
+				 			</ul>
+				 		</div>
+				 		<div>
+				 			<img src="../img/hrb2.jpg" alt="" />
+				 			<ul class="info_ul">
+				 				<li>泰国</li>
+				 				<li>1166位用户发起过定制</li>
+				 				<li>国家</li>
+				 			</ul>
+				 		</div>
+				 		<div>
+				 			<img src="../img/hrb3.jpg" alt="" />
+				 			<ul class="info_ul">
+				 				<li>泰国</li>
+				 				<li>1166位用户发起过定制</li>
+				 				<li>国家</li>
+				 			</ul>
+				 		</div>
+					 </div>
+				 </div>
+				 <div class="img_container">
+					 <div class="img_Sdiv">
+					 	<img src="../img/hrb2.jpg" alt="" />
+					 	<img src="../img/hrb3.jpg" alt="" />
+					 	<div style="clear: both;"></div>
+					 </div> 
+					 <div class="img_Sdiv">
+					 	<img src="../img/hrb2.jpg" alt="" />
+					 	<img src="../img/hrb3.jpg" alt="" />
+					 	<div style="clear: both;"></div>
+					 </div> 
+				 </div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src ="../js/jquery-1.11.3.min.js"></script>
+		<script src="../js/iscroll.js"></script><!--下一站推荐轮播图-->
+		<script src="../js/advertise_scroll.js"></script><!--广告位轮播图-->
+		<script type="text/javascript">
+		  mui.init()
+		  mui.plusReady(function(){      
+			 //获得slider插件对象
+		    var gallery = mui('.mui-slider');
+		        gallery.slider({
+		  	    interval:2500//自动轮播周期
+		    });
+		    function sliding(id){
+			  var myScroll = new IScroll(id,{  
+				preventDefault:false,
+				disablePointer: true,  
+			    mouseWheel : false,     
+			    scrollY : false,  
+				vScrollbar:false,
+			    freeScroll : false,
+				hScrollbar:false, 
+			    scrollX : true,           
+			    bounce : false,                  
+			    startX : 0,               
+			    startY : 0,               
+			    tap : false,               
+			    momentum:false,
+				eventPassthrough:true,
+			   });
+			    myScroll.scrollTo(-1400, 0, 80000); 
+			}
+		    sliding('#wrapper');
+		    
+		  })
+		</script>
+		
+	</body>
+</html>
